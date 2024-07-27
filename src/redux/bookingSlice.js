@@ -13,8 +13,7 @@ const bookingSlice = createSlice({
   initialState,
   reducers: {
     addSeat: (state, action) => {
-      console.log(action);
-      console.log(state);
+      // console.log(action);
       state.gheBanChon.push(action.payload);
       //   state.daDat = action.payload.daDat;
       action.payload.daDat = true;

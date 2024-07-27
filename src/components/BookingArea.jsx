@@ -196,10 +196,13 @@ const BookingArea = () => {
   return (
     <div className="booking_area grid md:grid-cols-1 lg:grid-cols-3">
       <div className="col-span-2">
-        <h2 className="text-3xl font-bold uppercase text-center py-8">
+        <h2 className="text-3xl font-bold uppercase text-center py-8 text-yellow-200 italic">
           sơ đồ rạp
         </h2>
-        <div>
+        <h2 className="text-2xl text-center text-white pb-5 italic tracking-widest">
+          màn hình
+        </h2>
+        <div className="text-white">
           <SeatInfo danhSachGhe={danhSachGhe} />
         </div>
       </div>
