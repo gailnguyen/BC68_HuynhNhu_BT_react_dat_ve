@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addSeat } from "../redux/bookingSlice";
 
 const SeatInfo = (props) => {
