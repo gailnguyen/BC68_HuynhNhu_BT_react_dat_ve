@@ -9,9 +9,26 @@ const SeatInfo = (props) => {
     <div className="seat_info">
       {props.danhSachGhe.map((item, index) => {
         // console.log(item);
-        // console.log(item.danhSachGhe);
 
-        return (
+        return index === 0 ? (
+          <div className="grid grid-cols-12 space-y-5 mx-16">
+            <div className="row_name col-span-1 h-100 flex justify-center text-xl items-end font-bold text-yellow-300">
+              {item.hang}
+            </div>
+
+            <div className="col-span-11">
+              <div className="grid grid-cols-12">
+                {item.danhSachGhe.map((item1, index1) => {
+                  return (
+                    <button className="mx-2 py-1 rounded-md font-bold text-yellow-300 text-xl cursor-text">
+                      {item1.soGhe}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        ) : (
           <div className="grid grid-cols-12 space-y-5 mx-16">
             <div className="row_name col-span-1 h-100 flex justify-center text-xl items-end font-bold text-yellow-300">
               {item.hang}
@@ -22,7 +39,6 @@ const SeatInfo = (props) => {
                 {item.danhSachGhe.map((item1, index1) => {
                   return (
                     <button
-                      // onClick={handleClick}
                       onClick={() => {
                         dispatch(addSeat(item1));
                       }}

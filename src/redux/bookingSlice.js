@@ -12,18 +12,21 @@ const bookingSlice = createSlice({
   initialState,
   reducers: {
     addSeat: (state, action) => {
-      console.log(action);
+      // console.log(action);
       state.gheBanChon.push(action.payload);
-      action.payload.daDat = true;
       state.tongTien = state.gia += action.payload.gia;
       // console.log(state.tongTien);
     },
-    removeTicket: (state, action) => {
-      console.log(action);
+    removeSeat: (state, action) => {
+      let deletedSeat = action.payload.soGhe;
+      state.gheBanChon = state.gheBanChon.filter(
+        (item) => item.soGhe !== deletedSeat
+      );
+      state.tongTien = state.tongTien - action.payload.gia;
     },
   },
 });
 
-export const { addSeat, removeTicket } = bookingSlice.actions;
+export const { addSeat, removeSeat } = bookingSlice.actions;
 
 export default bookingSlice.reducer;
